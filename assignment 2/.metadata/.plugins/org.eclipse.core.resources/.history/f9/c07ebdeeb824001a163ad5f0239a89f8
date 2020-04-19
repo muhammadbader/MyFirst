@@ -1,0 +1,96 @@
+package bgu.spl.mics.application.subscribers;
+
+import java.util.LinkedList;
+
+import bgu.spl.mics.Future;
+import bgu.spl.mics.Subscriber;
+import bgu.spl.mics.application.messages.AgentsAvailableEvent;
+import bgu.spl.mics.application.messages.GadgetAvailableEvent;
+import bgu.spl.mics.application.messages.MissionReceivedEvent;
+import bgu.spl.mics.application.messages.TickBroadcast;
+import bgu.spl.mics.application.messages.lastTick;
+import bgu.spl.mics.application.passiveObjects.Diary;
+import bgu.spl.mics.application.passiveObjects.MissionInfo;
+import bgu.spl.mics.application.passiveObjects.Report;
+import javafx.util.Pair;
+
+/**
+ * M handles ReadyEvent - fills a report and sends agents to mission.
+ *
+ * You can add private fields and public methods to this class. You MAY change
+ * constructor signatures and even add new public constructors.
+ */
+public class M extends Subscriber {
+
+	private int m;
+	private Diary diary;
+	private int currentTick;
+
+	public M(String Mm) {
+		super(Mm);
+		// TODO Implement this
+		diary = Diary.getInstance();
+		m = Integer.parseInt(Mm);
+	}
+
+	@Override
+	protected void initialize() {
+		// TODO Implement this
+		subscribeBroadcast(TickBroadcast.class, (tick) -> {
+			currentTick = tick.gettick();
+		});
+		subscribeBroadcast(lastTick.class,ter->{
+			terminate();
+		});
+		subscribeEvent(MissionReceivedEvent.class, mssn -> {
+			Report report = new Report();
+			report.setTimeCreated(currentTick);
+			MissionInfo mission = mssn.getMession();
+			report.setMissionName(mission.getMissionName());
+			report.setM(m);
+			report.setTimeIssued(mssn.gettick());
+			Future<Pair<Pair<List<String>,List<String>>,Pair<Integer,Future<Boolean>>>> future = getSimplePublisher().getMB().sendEvent(new AgentsAvailableEvent(mission));
+			//the first is the serial number
+			//the second is the name
+			
+			try {
+				Pair<Pair<List<String>,List<String>>,Pair<Integer,Future<Boolean>>> tmp=future.get(); 
+				report.setMoneypenny(tmp.getValue().getKey());
+				Future<Boolean> tmpfuture=tmp.getValue().getValue();
+				//check if not null
+				if(tmpfuture!=null) {//if future != null
+					// update the report with the agents serial numbers
+					report.setAgentsSerialNumbersNumber(tmp.getKey().getKey());
+					report.setAgentsNames(tmp.getKey().getValue());
+					
+						Future<Pair<Boolean,Pair<Integer,String>>> future2 = getSimplePublisher().getMB().sendEvent(new GadgetAvailableEvent(mission));
+						Pair<Boolean,Pair<Integer,String>> gad=future2.get();
+							// update the report
+							report.setGadgetName(gad.getValue().getValue());
+							report.setQTime(gad.getValue().getKey());
+							if(mission.getTimeExpired()>=currentTick) {
+								//NOT FINAL
+								tmpfuture.resolve(true);//execute the mission
+								
+								//check if the time is not up
+								diary.addReport(report);
+							}else {
+								tmpfuture.resolve(false);//abort the mission
+								//increase the total mission number
+								
+							}
+				}else {
+					//increment the total missions in the diary, mission failed
+					diary.incremrnt();
+				}
+					
+					
+				
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+			}
+		});
+		
+	}
+
+}

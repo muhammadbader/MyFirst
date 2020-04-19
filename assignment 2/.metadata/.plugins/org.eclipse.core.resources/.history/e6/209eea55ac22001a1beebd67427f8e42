@@ -1,0 +1,20 @@
+package bgu.spl.mics.application.messages;
+
+import bgu.spl.mics.Event;
+import bgu.spl.mics.application.passiveObjects.MissionInfo;
+
+public class sendagentsEvent implements Event<MissionInfo>{
+
+	@Override
+	public void completed() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isCompleted() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

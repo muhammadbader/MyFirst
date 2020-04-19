@@ -1,0 +1,28 @@
+package bgu.spl.mics.application.messages;
+
+import bgu.spl.mics.Broadcast;
+import bgu.spl.mics.Event;
+import bgu.spl.mics.Future;
+import bgu.spl.mics.Message;
+import bgu.spl.mics.application.passiveObjects.MissionInfo;
+import java.util.LinkedList;
+
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
+import javafx.util.Pair;
+
+public class AgentsAvailableEvent implements Event<Pair<Pair<List<String>,List<String>>,Pair<Integer,Future<Boolean>>>> {
+    private MissionInfo mission;
+	
+	public AgentsAvailableEvent(MissionInfo mission) {
+        this.mission = mission;
+    }
+
+    public String toString() {
+    return "AgentsAvailableEvent";
+    }
+
+    public MissionInfo getMession() {
+        return mission;
+    }
+}

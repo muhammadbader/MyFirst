@@ -1,0 +1,24 @@
+package bgu.spl.mics.application.messages;
+
+import bgu.spl.mics.Broadcast;
+import bgu.spl.mics.Event;
+import bgu.spl.mics.Future;
+import bgu.spl.mics.Message;
+
+public class GadgetAvailableEvent implements Event<GadgetAvailableEvent> , Broadcast{
+	private boolean completed=false;
+    private Future<GadgetAvailableEvent> future=new Future<>();
+    
+    
+    public void completed(GadgetAvailableEvent result) {
+    	completed=true;
+    	future.resolve(result);
+    }
+    public boolean isCompleted() {
+    	return completed;
+    }
+    public String toString() {
+        return "GadgetAvailableEvent";
+        }
+    
+}

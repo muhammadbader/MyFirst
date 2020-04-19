@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.junit.Before"/>
+<fullyQualifiedTypeName name="java.util.concurrent.atomic.AtomicBoolean"/>
+<fullyQualifiedTypeName name="org.junit.jupiter.api.AfterEach"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.subscribers.Moneypenny"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.Event"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.Broadcast"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ConcurrentMap"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ConcurrentHashMap"/>
+<fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
+<fullyQualifiedTypeName name="java.util.concurrent.BlockingQueue"/>
+<fullyQualifiedTypeName name="java.util.concurrent.LinkedBlockingQueue"/>
+<fullyQualifiedTypeName name="com.sun.glass.ui.Timer"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.Subscriber"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.messages.TickBroadcast"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.messages.lastTick"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.messages.MissionReceivedEvent"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.passiveObjects.Diary"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.passiveObjects.Report"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.messages.sendagentsEvent"/>
+<fullyQualifiedTypeName name="java.util.concurrent.atomic.AtomicInteger"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.messages.AgentsAvailableEvent"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.schemagen.xmlschema.List"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.Future"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.messages.GadgetAvailableEvent"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.passiveObjects.MissionInfo"/>
+<fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.passiveObjects.Inventory"/>
+<fullyQualifiedTypeName name="bgu.spl.mics.application.passiveObjects.Squad"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ExecutorService"/>
+<fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+</qualifiedTypeNameHistroy>

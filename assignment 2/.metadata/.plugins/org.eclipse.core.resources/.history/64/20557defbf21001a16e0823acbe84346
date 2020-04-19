@@ -1,0 +1,23 @@
+package bgu.spl.mics.application.messages;
+
+import bgu.spl.mics.Broadcast;
+import bgu.spl.mics.Event;
+import bgu.spl.mics.Future;
+import bgu.spl.mics.Message;
+
+public class AgentsAvailableEvent implements Event<AgentsAvailableEvent> {
+    private boolean completed=false;
+    
+    
+    public void completed(AgentsAvailableEvent result) {
+    	completed=true;
+    }
+    public boolean isCompleted() {
+    	return completed;
+    }
+    public String toString() {
+    return "AgentsAvailableEvent";
+    }
+
+    
+}

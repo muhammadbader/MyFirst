@@ -1,0 +1,31 @@
+package bgu.spl.mics.application;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import bgu.spl.mics.application.passiveObjects.Inventory;
+import bgu.spl.mics.application.passiveObjects.Squad;
+
+/** This is the Main class of the application. You should parse the input file, 
+ * create the different instances of the objects, and run the system.
+ * In the end, you should output serialized objects.
+ */
+public class MI6Runner {
+    public static void main(String[] args) {
+        // TODO Implement this
+    	Inventory inventory=Inventory.getInstance();
+    	Squad squad=Squad.getInstance();
+    	ExecutorService threadPool = Executors.newFixedThreadPool(10);
+    	//threadPool.execute
+    	
+    	
+    	try {
+    	JsonParser parser = new JsonParser();
+		Object obj = parser.parse(new FileReader(args[0]));
+		JsonObject jsonObj = (JsonObject) obj;
+		JsonObject services = (JsonObject)jsonObj.get("services").getAsJsonObject();
+    	}catch(Exception e) {
+    		
+    	}
+    }
+}

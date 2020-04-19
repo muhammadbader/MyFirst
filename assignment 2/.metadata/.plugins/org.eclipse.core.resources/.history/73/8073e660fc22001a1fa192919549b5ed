@@ -1,0 +1,32 @@
+package bgu.spl.mics.application.messages;
+
+import bgu.spl.mics.Broadcast;
+import bgu.spl.mics.Event;
+import bgu.spl.mics.Future;
+import bgu.spl.mics.Message;
+import bgu.spl.mics.application.passiveObjects.MissionInfo;
+import bgu.spl.mics.application.subscribers.List;
+import bgu.spl.mics.application.subscribers.Pair;
+
+public class AgentsAvailableEvent implements Event<Pair<List<String>,List<String>>> {
+    private boolean completed=false;
+    private MissionInfo mission;
+	
+	public AgentsAvailableEvent(MissionInfo mission) {
+        this.mission = mission;
+    }
+//    
+//    public void completed() {
+//    	completed=true;
+//    }
+//    public boolean isCompleted() {
+//    	return completed;
+//    }
+    public String toString() {
+    return "AgentsAvailableEvent";
+    }
+
+    public MissionInfo getMession() {
+        return mission;
+    }
+}

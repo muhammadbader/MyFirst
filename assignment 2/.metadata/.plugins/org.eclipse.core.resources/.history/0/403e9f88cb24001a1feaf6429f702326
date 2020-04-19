@@ -1,0 +1,65 @@
+package bgu.spl.mics.application.subscribers;
+
+import java.util.List;
+
+import bgu.spl.mics.Future;
+import bgu.spl.mics.Subscriber;
+import bgu.spl.mics.application.messages.AgentsAvailableEvent;
+import bgu.spl.mics.application.messages.TickBroadcast;
+import bgu.spl.mics.application.messages.lastTick;
+import bgu.spl.mics.application.passiveObjects.MissionInfo;
+import bgu.spl.mics.application.passiveObjects.Squad;
+import javafx.util.Pair;
+
+/**
+ * Only this type of Subscriber can access the squad.
+ * Three are several Moneypenny-instances - each of them holds a unique serial number that will later be printed on the report.
+ *
+ * You can add private fields and public methods to this class.
+ * You MAY change constructor signatures and even add new public constructors.
+ */
+public class Moneypenny extends Subscriber {
+
+	private int currentTick;
+	private Squad squad;
+	private int id;
+	public Moneypenny(String name, int id) {
+		super(name);
+		// TODO Implement this
+		this.id=id;
+		squad=Squad.getInstance();
+	}
+
+	@Override
+	protected void initialize() {
+		// TODO Implement this
+		subscribeBroadcast(TickBroadcast.class, (tick) -> {
+			currentTick = tick.gettick();
+		});
+		subscribeBroadcast(lastTick.class,ter->{
+			terminate();
+		});
+		subscribeEvent(AgentsAvailableEvent.class, agents -> {
+			MissionInfo mission = agents.getMession();
+			List<String> serial=mission.getSerialAgentsNumbers();
+			List<String> names=null;
+			if(squad.getAgents(serial)) {
+				names=squad.getAgentsNames(serial);
+				//resolve
+			Future<Boolean> exec=new Future<>();
+			Pair<Integer,Future<Boolean>> tmep1=new Pair<Integer,Future<Boolean>>(id,exec);
+			Pair<List<String>,List<String>> tmep2=new Pair<List<String>,List<String>>(serial,names);
+			Pair<Pair<List<String>,List<String>>,Pair<Integer,Future<Boolean>>>  returned=new Pair<Pair<List<String>,List<String>>,Pair<Integer,Future<Boolean>>>(null, tmep1);
+			
+//			Future<Pair<Pair<List<String>,List<String>>,Pair<Integer,Future<Boolean>>>> 
+			}else {
+				
+			}
+			
+			
+			});
+		
+		
+	}
+
+}

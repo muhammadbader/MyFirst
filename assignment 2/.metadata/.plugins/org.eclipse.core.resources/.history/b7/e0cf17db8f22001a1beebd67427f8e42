@@ -1,0 +1,29 @@
+package bgu.spl.mics.application.messages;
+
+import bgu.spl.mics.Broadcast;
+import bgu.spl.mics.Event;
+import bgu.spl.mics.Future;
+import bgu.spl.mics.Message;
+
+public class MissionReceivedEvent implements Event<String>{
+
+	private boolean completed=false;
+	private String senderName;
+	
+	public MissionReceivedEvent(String senderName) {
+        this.senderName = senderName;
+    }
+    
+    public void completed() {
+    	completed=true;
+    }
+    public boolean isCompleted() {
+    	return completed;
+    }
+    public String toString() {
+        return "MissionReceivedEvent";
+        }
+    public String getSenderName() {
+        return senderName;
+    }
+}

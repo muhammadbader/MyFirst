@@ -1,0 +1,29 @@
+package bgu.spl.mics.application.messages;
+
+import bgu.spl.mics.Broadcast;
+import bgu.spl.mics.Event;
+import bgu.spl.mics.Future;
+import bgu.spl.mics.Message;
+
+public class AgentsAvailableEvent implements Event<AgentsAvailableEvent> , Broadcast{
+    private boolean completed=false;
+    private Future<AgentsAvailableEvent> future=new Future<>();
+    
+    
+    public void completed(AgentsAvailableEvent result) {
+    	completed=true;
+    	future.resolve(result);
+    }
+    public boolean isCompleted() {
+    	return completed;
+    }
+    public String toString() {
+    return "AgentsAvailableEvent";
+    }
+	@Override
+	public Future<AgentsAvailableEvent> getFuture() {
+		// TODO Auto-generated method stub
+		return future;
+	}
+    
+}

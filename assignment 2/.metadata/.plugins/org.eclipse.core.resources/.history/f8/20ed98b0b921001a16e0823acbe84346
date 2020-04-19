@@ -1,0 +1,145 @@
+package bgu.spl.mics;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
+import bgu.spl.mics.application.passiveObjects.Agent;
+
+/**
+ * The {@link MessageBrokerImpl class is the implementation of the MessageBroker
+ * interface. Write your implementation here! Only private fields and methods
+ * can be added to this class.
+ */
+public class MessageBrokerImpl implements MessageBroker {
+	private static class SingletonMessageBroker {
+		private static MessageBroker instance = new MessageBrokerImpl();
+	}
+
+	private Map<Subscriber, Queue<Message>> subqueue = new HashMap<Subscriber, Queue<Message>>();
+	private ConcurrentMap<Class<? extends Event<?>>, LinkedList<Subscriber>> eventMap = new ConcurrentHashMap<>();
+	private ConcurrentMap<String, Integer> RoundRobin = new ConcurrentHashMap<>();
+	private ConcurrentMap<Class<? extends Event<?>>, LinkedList<Event<?>>> events = new ConcurrentHashMap<>();
+	private ConcurrentMap<Class<? extends Broadcast>, LinkedList<Subscriber>> broadcastMap = new ConcurrentHashMap<>();
+
+	private Object lock = new Object();
+
+	/**
+	 * Retrieves the single instance of this class.
+	 */
+	public static MessageBroker getInstance() {
+		// TODO: Implement this
+		return SingletonMessageBroker.instance;
+	}
+
+	@Override
+	public <T> void subscribeEvent(Class<? extends Event<T>> type, Subscriber m) {
+		// TODO Auto-generated method stub
+		synchronized (lock) {
+			if (eventMap.get(type) == null) {
+				eventMap.put(type, new LinkedList<Subscriber>());
+				RoundRobin.put(type.toString(),new Integer(0));
+				events.put(type, new LinkedList<Event<?>>());
+				eventMap.get(type).add(m);
+			} else {
+				eventMap.get(type).add(m);
+			}
+		}
+
+	}
+
+	@Override
+	public void subscribeBroadcast(Class<? extends Broadcast> type, Subscriber m) {
+		// TODO Auto-generated method stub
+		if (broadcastMap.get(type) == null) {
+			broadcastMap.put(type, new LinkedList<Subscriber>());
+			broadcastMap.get(type).add(m);
+		} else {
+			broadcastMap.get(type).add(m);
+		}
+
+	}
+
+	@Override
+	public <T> void complete(Event<T> e, T result) {
+		// TODO Auto-generated method stub
+		e.completed(result);
+
+	}
+
+	@Override
+	public void sendBroadcast(Broadcast b) {
+		// TODO Auto-generated method stub
+		if (broadcastMap.get(b) != null) {
+			LinkedList<Subscriber> tmp = broadcastMap.get(b);
+			for (Subscriber s : tmp) {
+				subqueue.get(s).add(b);
+			}
+		}
+	}
+
+	@Override
+	public <T> Future<T> sendEvent(Event<T> e) {
+		// TODO Auto-generated method stub
+		synchronized (lock) {
+			if(eventMap.get(e.getClass())!=null) {
+				int x=RoundRobin.get(e.toString());
+				x=(x)%(eventMap.get(e.getClass()).size());//in case a subscriber unregistered itself and we didn't update the roundrobin
+				events.get(e.getClass()).add(e);
+				Subscriber tmp=eventMap.get(e.getClass()).get(x);
+				subqueue.get(tmp).add(e);
+				x=(x+1)%(eventMap.get(e.getClass()).size());
+				RoundRobin.put( e.toString(),x); 
+				return e.getFuture(); // check check
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public void register(Subscriber m) {
+		// TODO Auto-generated method stub
+		subqueue.put(m, new LinkedList<Message>());
+
+	}
+
+	@Override
+	public void unregister(Subscriber m) {
+		// TODO Auto-generated method stub
+		subqueue.remove(m);
+		synchronized (lock) {
+			for (Class<?> key : eventMap.keySet()) {
+				for (int i = 0; i < eventMap.get(key).size(); i++) {
+					if (eventMap.get(key).get(i) == m) {
+						eventMap.get(key).remove(i);
+						break;
+					}
+				}
+			}
+		}
+
+		for (Class<?> key : broadcastMap.keySet()) {
+			for (int i = 0; i < broadcastMap.get(key).size(); i++) {
+				if (broadcastMap.get(key).get(i) == m) {
+					broadcastMap.get(key).remove(i);
+					break;
+				}
+			}
+		}
+
+	}
+
+	@Override
+	public Message awaitMessage(Subscriber m) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		return null;
+	}
+
+}

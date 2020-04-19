@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Boost_Echo_Client" targetName="Boost_Echo_Client" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" GENERATION_DIR="cmake-build-debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3457da83-c165-490b-9909-a347c72c78e5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1WDG2FDnxjQQroO78xHLX9aOUdr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.C/C++" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Boost_Echo_Client" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Boost_Echo_Client" TARGET_NAME="Boost_Echo_Client" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Boost_Echo_Client" RUN_TARGET_NAME="Boost_Echo_Client">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3457da83-c165-490b-9909-a347c72c78e5" name="Default Changelist" comment="" />
+      <created>1578676543252</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578676543252</updated>
+      <workItem from="1578676546914" duration="35000" />
+      <workItem from="1578684773428" duration="1511000" />
+      <workItem from="1578762696887" duration="219000" />
+      <workItem from="1578762979623" duration="721000" />
+      <workItem from="1578764545308" duration="224000" />
+      <workItem from="1578764848281" duration="1132000" />
+      <workItem from="1578771040940" duration="684000" />
+      <workItem from="1578773260614" duration="768000" />
+      <workItem from="1578774127942" duration="5667000" />
+      <workItem from="1578809262013" duration="7666000" />
+      <workItem from="1578826861709" duration="6512000" />
+      <workItem from="1578846972200" duration="3563000" />
+      <workItem from="1578862124430" duration="2638000" />
+      <workItem from="1578866972901" duration="188000" />
+      <workItem from="1578867779954" duration="383000" />
+      <workItem from="1578868203959" duration="96000" />
+      <workItem from="1578868336335" duration="38000" />
+      <workItem from="1578901571957" duration="2993000" />
+      <workItem from="1578907592246" duration="11102000" />
+      <workItem from="1578934520256" duration="2342000" />
+      <workItem from="1578937850002" duration="2984000" />
+      <workItem from="1578944604098" duration="15000" />
+      <workItem from="1578945617318" duration="2949000" />
+      <workItem from="1578951630197" duration="138000" />
+      <workItem from="1579020064452" duration="1136000" />
+      <workItem from="1579022204653" duration="5070000" />
+      <workItem from="1579038140709" duration="4608000" />
+      <workItem from="1579043150858" duration="90000" />
+      <workItem from="1579098414104" duration="11493000" />
+      <workItem from="1579112361244" duration="4401000" />
+      <workItem from="1579120116807" duration="79000" />
+      <workItem from="1579125180887" duration="724000" />
+      <workItem from="1579128671983" duration="1130000" />
+      <workItem from="1579130788663" duration="344000" />
+      <workItem from="1579131378821" duration="89000" />
+      <workItem from="1579131707375" duration="419000" />
+      <workItem from="1579132178626" duration="1491000" />
+      <workItem from="1579142676930" duration="18000" />
+      <workItem from="1579142712343" duration="39000" />
+      <workItem from="1579172114530" duration="3502000" />
+      <workItem from="1579187350476" duration="9304000" />
+      <workItem from="1579294529998" duration="2015000" />
+      <workItem from="1579335054095" duration="951000" />
+      <workItem from="1579339319554" duration="1364000" />
+      <workItem from="1579340714246" duration="399000" />
+      <workItem from="1579341321325" duration="1079000" />
+      <workItem from="1579347871799" duration="1157000" />
+      <workItem from="1579453071529" duration="737000" />
+      <workItem from="1579463951387" duration="89000" />
+      <workItem from="1580812662338" duration="263000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578776812140">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1578776812140" />
+    <state width="640" height="197" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1578934691074">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="640" height="197" key="ImportCMakeProjectWizard.bottomPanel/0.0.1680.1050@0.0.1680.1050" timestamp="1578934691074" />
+    <state width="640" height="461" key="ImportCMakeProjectWizard.topPanel" timestamp="1578934691074">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="640" height="461" key="ImportCMakeProjectWizard.topPanel/0.0.1680.1050@0.0.1680.1050" timestamp="1578934691074" />
+    <state x="349" y="164" key="SettingsEditor" timestamp="1578776696826">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1578776696826" />
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1579463951414">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1579463951414" />
+    <state x="519" y="349" key="com.intellij.ide.util.TipDialog/0.23.1680.958@0.23.1680.958" timestamp="1578901572388" />
+    <state x="602" y="163" key="refactoring.ChangeSignatureDialog" timestamp="1579297219621">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="602" y="163" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1579297219621" />
+  </component>
+</project>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="muhammad205530942_aya209105519" targetName="muhammad205530942_aya209105519" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="400b7647-cf70-413a-9cf3-b44d59e7bb60" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ProjectId" id="1TxaIvBSPuhhXykMdbaiwJyihOU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.assignment_1">
+    <configuration name="assignment_1" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/config2.json" PASS_PARENT_ENVS_2="true" PROJECT_NAME="muhammad205530942_aya209105519" TARGET_NAME="assignment_1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="muhammad205530942_aya209105519" RUN_TARGET_NAME="assignment_1">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="muhammad205530942_aya209105519" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="muhammad205530942_aya209105519" TARGET_NAME="muhammad205530942_aya209105519" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="muhammad205530942_aya209105519" RUN_TARGET_NAME="muhammad205530942_aya209105519">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.assignment_1" />
+      <item itemvalue="CMake Application.muhammad205530942_aya209105519" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="400b7647-cf70-413a-9cf3-b44d59e7bb60" name="Default Changelist" comment="" />
+      <created>1574404124148</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574404124148</updated>
+      <workItem from="1574404126613" duration="836000" />
+      <workItem from="1574407518478" duration="3896000" />
+      <workItem from="1574416119583" duration="2000" />
+      <workItem from="1574419049950" duration="338000" />
+      <workItem from="1574419393051" duration="32000" />
+      <workItem from="1574419470431" duration="769000" />
+      <workItem from="1574425719439" duration="7103000" />
+      <workItem from="1574510782361" duration="5054000" />
+      <workItem from="1574538326128" duration="3266000" />
+      <workItem from="1574571450348" duration="382000" />
+      <workItem from="1574574917925" duration="5769000" />
+      <workItem from="1574587733431" duration="497000" />
+      <workItem from="1574597874590" duration="75000" />
+      <workItem from="1574613369354" duration="2709000" />
+      <workItem from="1574616785618" duration="10538000" />
+      <workItem from="1574632200570" duration="1052000" />
+      <workItem from="1574655715701" duration="2293000" />
+      <workItem from="1574660502323" duration="774000" />
+      <workItem from="1574668289012" duration="1023000" />
+      <workItem from="1574669331188" duration="38000" />
+      <workItem from="1574669394309" duration="1525000" />
+      <workItem from="1574673847243" duration="24000" />
+      <workItem from="1574677940468" duration="5326000" />
+      <workItem from="1574688666519" duration="1339000" />
+      <workItem from="1574702517714" duration="2573000" />
+      <workItem from="1574706883586" duration="8113000" />
+      <workItem from="1574744170345" duration="342000" />
+      <workItem from="1574771952845" duration="7209000" />
+      <workItem from="1574791058114" duration="5777000" />
+      <workItem from="1574797833572" duration="8133000" />
+      <workItem from="1574835000390" duration="6178000" />
+      <workItem from="1574841566387" duration="546000" />
+      <workItem from="1574925073940" duration="8564000" />
+      <workItem from="1574941498964" duration="1778000" />
+      <workItem from="1574946798493" duration="5350000" />
+      <workItem from="1574960015456" duration="4478000" />
+      <workItem from="1574965928971" duration="149000" />
+      <workItem from="1574966710661" duration="2104000" />
+      <workItem from="1574969747620" duration="2504000" />
+      <workItem from="1575008987719" duration="563000" />
+      <workItem from="1575032897869" duration="9231000" />
+      <workItem from="1575043194023" duration="1550000" />
+      <workItem from="1575045973421" duration="168000" />
+      <workItem from="1575052280973" duration="129000" />
+      <workItem from="1575055783000" duration="98000" />
+      <workItem from="1575060358747" duration="424000" />
+      <workItem from="1575094960161" duration="76000" />
+      <workItem from="1575107443025" duration="37000" />
+      <workItem from="1575107550803" duration="709000" />
+      <workItem from="1575185875751" duration="1043000" />
+      <workItem from="1575193587388" duration="1194000" />
+      <workItem from="1575203815880" duration="305000" />
+      <workItem from="1575236786180" duration="675000" />
+      <workItem from="1575238407411" duration="29000" />
+      <workItem from="1575240068214" duration="223000" />
+      <workItem from="1575315344346" duration="8698000" />
+      <workItem from="1575353515585" duration="5245000" />
+      <workItem from="1575373979766" duration="1199000" />
+      <workItem from="1575388077780" duration="111000" />
+      <workItem from="1575388585380" duration="610000" />
+      <workItem from="1575398243570" duration="1263000" />
+      <workItem from="1575399539006" duration="21000" />
+      <workItem from="1575400492617" duration="944000" />
+      <workItem from="1575479407733" duration="311000" />
+      <workItem from="1575479723873" duration="47000" />
+      <workItem from="1575565432106" duration="36000" />
+      <workItem from="1575579357494" duration="619000" />
+      <workItem from="1575580581265" duration="1331000" />
+      <workItem from="1576391053006" duration="114000" />
+      <workItem from="1576407355589" duration="34000" />
+      <workItem from="1576666488301" duration="48000" />
+      <workItem from="1578822586857" duration="462000" />
+      <workItem from="1578823897014" duration="363000" />
+      <workItem from="1578826731271" duration="1000" />
+      <workItem from="1578826739425" duration="1000" />
+      <workItem from="1578849998059" duration="13000" />
+      <workItem from="1578867960815" duration="205000" />
+      <workItem from="1578902511717" duration="556000" />
+      <workItem from="1579172409262" duration="673000" />
+      <workItem from="1579296964928" duration="580000" />
+      <workItem from="1580812468839" duration="964000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1398" height="278" key="GridCell.Tab.0.bottom" timestamp="1575044867897">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575044867897" />
+    <state width="1398" height="278" key="GridCell.Tab.0.center" timestamp="1575044867896">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="278" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575044867896" />
+    <state width="1398" height="278" key="GridCell.Tab.0.left" timestamp="1575044867895">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="278" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575044867895" />
+    <state width="1398" height="278" key="GridCell.Tab.0.right" timestamp="1575044867897">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="278" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575044867897" />
+    <state x="466" y="308" key="com.intellij.ide.util.TipDialog" timestamp="1579172409794">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="399" y="264" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1576666488761" />
+    <state x="466" y="308" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1579172409794" />
+    <state x="399" y="262" key="com.intellij.ide.util.TipDialog/0.23.1440.814@0.23.1440.814" timestamp="1575032898651" />
+  </component>
+</project>

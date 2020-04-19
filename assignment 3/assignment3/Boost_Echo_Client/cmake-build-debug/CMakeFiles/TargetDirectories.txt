@@ -1,0 +1,3 @@
+/Users/muhammadbader/Desktop/מדעי המחשב/סמסטר ג׳/תכנות מערכות/assignment 3/assignment3/Boost_Echo_Client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/muhammadbader/Desktop/מדעי המחשב/סמסטר ג׳/תכנות מערכות/assignment 3/assignment3/Boost_Echo_Client/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/muhammadbader/Desktop/מדעי המחשב/סמסטר ג׳/תכנות מערכות/assignment 3/assignment3/Boost_Echo_Client/cmake-build-debug/CMakeFiles/Boost_Echo_Client.dir

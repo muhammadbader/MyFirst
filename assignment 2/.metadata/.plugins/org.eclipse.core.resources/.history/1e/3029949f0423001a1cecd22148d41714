@@ -1,0 +1,82 @@
+package bgu.spl.mics.application.subscribers;
+
+import java.util.LinkedList;
+
+import bgu.spl.mics.Future;
+import bgu.spl.mics.Subscriber;
+import bgu.spl.mics.application.messages.AgentsAvailableEvent;
+import bgu.spl.mics.application.messages.GadgetAvailableEvent;
+import bgu.spl.mics.application.messages.MissionReceivedEvent;
+import bgu.spl.mics.application.messages.TickBroadcast;
+import bgu.spl.mics.application.messages.sendagentsEvent;
+import bgu.spl.mics.application.passiveObjects.Diary;
+import bgu.spl.mics.application.passiveObjects.MissionInfo;
+import bgu.spl.mics.application.passiveObjects.Report;
+import javafx.util.Pair;
+
+/**
+ * M handles ReadyEvent - fills a report and sends agents to mission.
+ *
+ * You can add private fields and public methods to this class. You MAY change
+ * constructor signatures and even add new public constructors.
+ */
+public class M extends Subscriber {
+
+	private int m;
+	private Diary diary;
+	private int currentTick;
+
+	public M(String Mm) {
+		super(Mm);
+		// TODO Implement this
+		diary = Diary.getInstance();
+		m = Integer.parseInt(Mm);
+	}
+
+	@Override
+	protected void initialize() {
+		// TODO Implement this
+		subscribeBroadcast(TickBroadcast.class, (tick) -> {
+			currentTick = tick.gettick();
+		});
+		subscribeEvent(MissionReceivedEvent.class, mssn -> {
+			Report report = new Report();
+			report.setTimeCreated(currentTick);
+			MissionInfo mission = mssn.getMession();
+			report.setMissionName(mission.getMissionName());
+			report.setM(m);
+			report.setTimeIssued(mssn.gettick());
+			Future<Pair<LinkedList<String>,LinkedList<String>>> future = getSimplePublisher().getMB().sendEvent(new AgentsAvailableEvent(mission));
+			//the first is the serial number
+			//the second is the name
+			
+			try {
+				Pair<LinkedList<String>,LinkedList<String>> tmp=future.get(); 
+					// update the report with the agents serial numbers
+				report.setAgentsSerialNumbersNumber(tmp.getKey());
+				report.setAgentsNames(tmp.getValue());
+				//need the MOneypenny num
+				
+					Future<Pair<Integer,String>> future2 = getSimplePublisher().getMB().sendEvent(new GadgetAvailableEvent(mission));
+					Pair<Integer,String> gad=future2.get();
+					//need the QTime
+						// update the report
+						report.setGadgetName(gad.getValue());
+						if(mission.getTimeExpired()>=currentTick) {
+							//not final solution
+							getSimplePublisher().getMB().sendEvent(new sendagentsEvent());
+						}
+					
+				
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+		
+		subscribeEvent(GadgetAvailableEvent.class,gadged->{
+			//TODO implement this
+		});
+	}
+
+}

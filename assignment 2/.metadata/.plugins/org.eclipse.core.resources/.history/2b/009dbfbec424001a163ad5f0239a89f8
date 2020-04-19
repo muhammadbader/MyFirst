@@ -1,0 +1,152 @@
+ package bgu.spl.mics;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.LinkedBlockingQueue;
+
+/**
+ * The {@link MessageBrokerImpl class is the implementation of the MessageBroker interface.
+ * Write your implementation here!
+ * Only private fields and methods can be added to this class.
+ */
+public class MessageBrokerImpl implements MessageBroker {
+
+	
+	/*
+	 * @param hashMap microservices with its message queue
+	 * @param subMicEvent holds the events with its subscribed microservice
+	 * @param subMicBrod holds the brodcast with its subscribed microservice
+	 * @param toBeSolved will hold the events with its unsolved futures(futures to be solved)
+	 * */
+	private ConcurrentHashMap<Subscriber, BlockingQueue<Message>> hashMap;
+	private ConcurrentHashMap<Class<? extends Message>, LinkedList<Subscriber>> eventsHash;
+	private ConcurrentHashMap<Class<? extends Message>, LinkedList<Subscriber>> broad;
+	private ConcurrentHashMap<Event<?>, Future<?>> toBeSolved;
+	// my locks;
+	private Object lock1;
+	private Object MSLock;
+
+	
+	
+	/**
+	 * Retrieves the single instance of this class.
+	 */
+	public static MessageBroker getInstance() {
+		//TODO: Implement this
+		return null;
+	}
+
+	@Override
+	public <T> void subscribeEvent(Class<? extends Event<T>> type, Subscriber m) {
+		// TODO Auto-generated method stub
+		synchronized (eventsHash) {
+			if (type != null && m != null) {
+				if (eventsHash.containsKey(type) && !eventsHash.get(type).contains(m)) {
+					eventsHash.get(type).addLast(m);
+				} else {
+					if (!eventsHash.containsKey(type))
+					 {
+						eventsHash.put(type, new LinkedList<Subscriber>());
+						eventsHash.get(type).addLast(m);
+					 }
+				}
+			}
+
+		}
+	}
+ 
+
+	@Override
+	public void subscribeBroadcast(Class<? extends Broadcast> type, Subscriber m) {
+		// TODO Auto-generated method stub
+		synchronized (lock1) {
+			if (type != null && m != null) {
+				if (!(broad.contains(m) )) {
+					broad.addLast(m);
+				}	
+			}
+		}
+	}
+
+	@Override
+	public <T> void complete(Event<T> e, T result) {
+		// TODO Auto-generated method stub
+		if(e!=null ) {
+			Future<T> fut = ((Future<T>) toBeSolved.get(e));
+			if (fut != null)
+				fut.resolve(result);
+			toBeSolved.remove(e);
+			}
+	}
+
+	@Override
+	public void sendBroadcast(Broadcast b) {
+		// TODO Auto-generated method stub
+		if (b == null ||! broad.containsKey(b.getClass()) ||  broad.get(b.getClass())==null)
+			return;
+			LinkedList<Subscriber> _subscribed = broad.get(b.getClass());
+			Iterator<Subscriber> it = _subscribed.iterator();
+			synchronized (_subscribed) {
+				while (it.hasNext()) {
+					Subscriber m = it.next();
+					if (hashMap != null && hashMap.containsKey(m)) 
+							hashMap.get(m).put(b);
+						
+					}
+
+				}
+			}
+		
+	
+
+	
+	@Override
+	public <T> Future<T> sendEvent(Event<T> e) {
+		// TODO Auto-generated method stub
+	
+		if ( e == null || ! eventsHash.containsKey(e.getClass()) ||eventsHash.get(e.getClass())==null)
+			return null ;
+	Subscriber _subscribed = eventsHash.get(e.getClass()).pollFirst();
+	eventsHash.get(e.getClass()).addLast(_subscribed);
+		Future<T> fut = new Future<T>();
+		toBeSolved.put(e, fut);    
+		if (_subscribed != null && hashMap.containsKey(_subscribed)) {
+			hashMap.get(_subscribed).put(e);
+			return fut;
+		}
+		else {
+			fut.resolve(null);
+			toBeSolved.remove(e, fut);}
+		return null;
+		
+	}
+		
+
+	@Override
+	public void register(Subscriber m) {
+		// TODO Auto-generated method stub
+		BlockingQueue<Message> queue = new LinkedBlockingQueue<>();
+		hashMap.putIfAbsent(m, queue);
+		
+
+	}
+
+	
+	
+	@Override
+	public void unregister(Subscriber m) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Message awaitMessage(Subscriber m) throws InterruptedException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+}
